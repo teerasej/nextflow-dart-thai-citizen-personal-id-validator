@@ -1,6 +1,6 @@
 name: nextflow_thai_personal_id
 description: A plugin that you can use to validate Thai citizen's Personal ID value
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/teerasej/nextflow-dart-thai-citizen-personal-id-validator
 
 environment:

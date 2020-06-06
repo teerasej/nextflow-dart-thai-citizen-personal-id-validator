@@ -9,12 +9,12 @@ class ThaiIdValidator {
     return personalId.trim().replaceAll('-', '');
   }
 
-  static validateWithErrorMessage(String personalId, {String errorMessasge}){
+  static String validateWithErrorMessage(String personalId, {String errorMessasge}){
     ThaiIdValidator validator = ThaiIdValidator(errorMessage: errorMessasge);
     return validator.validate(personalId);
   }
 
-  validate(String personalId) {
+  String validate(String personalId) {
 
     if(personalId.length != 13){
        if (errorMessage != null) {
