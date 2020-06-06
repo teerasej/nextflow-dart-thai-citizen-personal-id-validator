@@ -1,3 +1,8 @@
+## [1.0.2] - 06/06/2020.
+
+* Add static method `validateNow()` 
+* Update manual
+
 ## [1.0.1] - 06/06/2020.
 
 * Declare validate() method return type
