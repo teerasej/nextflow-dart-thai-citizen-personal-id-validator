@@ -9,7 +9,7 @@ class ThaiIdValidator {
     return personalId.trim().replaceAll('-', '');
   }
 
-  static String validateWithErrorMessage(String personalId, {String errorMessasge}){
+  static String validateNow(String personalId, {String errorMessasge}){
     ThaiIdValidator validator = ThaiIdValidator(errorMessage: errorMessasge);
     return validator.validate(personalId);
   }
