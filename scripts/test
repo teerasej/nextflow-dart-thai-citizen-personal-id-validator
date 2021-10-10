@@ -1,0 +1,7 @@
+flutter test --coverage
+
+genhtml -o coverage coverage/lcov.info
+
+npm start
+
+open coverage/index.html

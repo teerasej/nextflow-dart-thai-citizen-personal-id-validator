@@ -1,0 +1,14 @@
+{
+  "name": "nextflow-dart-thai-citizen-personal-id-validator",
+  "version": "1.0.0",
+  "main": "covBadgeGen.js",
+  "repository": "https://github.com/teerasej/nextflow-dart-thai-citizen-personal-id-validator.git",
+  "author": "3lVv0w <krseisenh@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node covBadgeGen.js"
+  },
+  "dependencies": {
+    "lcov2badge": "^0.1.2"
+  }
+}

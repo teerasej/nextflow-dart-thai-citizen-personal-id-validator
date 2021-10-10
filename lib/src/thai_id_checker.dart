@@ -7,13 +7,8 @@ class ThaiIdValidator {
     this.errorMessage,
   });
 
-  static clean(String personalId) {
-    return personalId.trim().replaceAll('-', '');
-  }
-
-  static String? validateNow(String personalId, {String? errorMessasge}) {
-    ThaiIdValidator validator = ThaiIdValidator(errorMessage: errorMessasge);
-    return validator.validate(personalId);
+  static String clean(String personalId, {String dilimeter = "-"}) {
+    return personalId.trim().replaceAll(dilimeter, '');
   }
 
   String? validate(String personalId) {

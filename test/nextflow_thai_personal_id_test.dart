@@ -3,8 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:nextflow_thai_personal_id/nextflow_thai_personal_id.dart';
 
 void main() {
+  ThaiIdValidator validator = ThaiIdValidator();
   test('should pass with correct thai id', () {
-    ThaiIdValidator validator = ThaiIdValidator();
     var result = validator.validate('1100400121236');
     expect(null, result);
   });
@@ -15,11 +15,11 @@ void main() {
     expect('Incorrect Thai Personal ID. length is not equal 13', result);
   });
 
-  test('should not pass with random thai id', () {
-    ThaiIdValidator validator = ThaiIdValidator(
+  test('should not pass with random thai id with custom message', () {
+    ThaiIdValidator validatorCustom = ThaiIdValidator(
       errorMessage: 'Please check again',
     );
-    var result = validator.validate('1111111111111');
+    var result = validatorCustom.validate('1111111111111');
     expect('Please check again', result);
   });
 
@@ -44,6 +44,7 @@ void main() {
       'should get no whitespace string with leading and trailing from clean() 2',
       () {
     var result = ThaiIdValidator.clean('     1-1111-11111-11-1    ');
+    expect(String, result.runtimeType);
     expect('1111111111111', result);
   });
 }

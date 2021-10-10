@@ -1,6 +1,8 @@
 # Nextflow's Thai Personal Id checker
 
-Thai people's personal ID has 13 digit. So I decided to create a class with validate method to check correction. 
+![Coverage](./coverage_badge.svg?sanitize=true)
+
+Thai people's personal ID has 13 digit. So I decided to create a class with validate method to check correction.
 
 you can apply it directly to TextField's validate result, or decide to invoke `validate()` method yourself.
 
@@ -34,7 +36,7 @@ if(errorMessage != null) {
 }
 ```
 
-### Using static method 
+### Using static method
 
 NOTE: This static method cannot be used with `TextFormField`
 
