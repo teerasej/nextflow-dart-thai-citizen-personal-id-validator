@@ -2,7 +2,10 @@ class ThaiIdValidator {
   String? personalId;
   String? errorMessage;
 
-  ThaiIdValidator({this.personalId, this.errorMessage});
+  ThaiIdValidator({
+    this.personalId,
+    this.errorMessage,
+  });
 
   static clean(String personalId) {
     return personalId.trim().replaceAll('-', '');

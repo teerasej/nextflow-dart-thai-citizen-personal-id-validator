@@ -9,9 +9,16 @@ void main() {
     expect(null, result);
   });
 
+  test('should not pass with 14 length thai id', () {
+    ThaiIdValidator validator = ThaiIdValidator();
+    var result = validator.validate('11004001212365');
+    expect('Incorrect Thai Personal ID. length is not equal 13', result);
+  });
+
   test('should not pass with random thai id', () {
-    ThaiIdValidator validator =
-        ThaiIdValidator(errorMessage: 'Please check again');
+    ThaiIdValidator validator = ThaiIdValidator(
+      errorMessage: 'Please check again',
+    );
     var result = validator.validate('1111111111111');
     expect('Please check again', result);
   });
