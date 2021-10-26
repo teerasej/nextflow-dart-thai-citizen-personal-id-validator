@@ -1,23 +1,19 @@
 class ThaiIdValidator {
+  String? personalId;
+  String? errorMessage;
 
-  String personalId;
-  String errorMessage;
+  ThaiIdValidator({
+    this.personalId,
+    this.errorMessage,
+  });
 
-  ThaiIdValidator({this.personalId, this.errorMessage});
-
-  static clean(String personalId) {
-    return personalId.trim().replaceAll('-', '');
+  static String clean(String personalId, {String dilimeter = "-"}) {
+    return personalId.trim().replaceAll(dilimeter, '');
   }
 
-  static String validateNow(String personalId, {String errorMessasge}){
-    ThaiIdValidator validator = ThaiIdValidator(errorMessage: errorMessasge);
-    return validator.validate(personalId);
-  }
-
-  String validate(String personalId) {
-
-    if(personalId.length != 13){
-       if (errorMessage != null) {
+  String? validate(String personalId) {
+    if (personalId.length != 13) {
+      if (errorMessage != null) {
         return errorMessage;
       } else {
         return 'Incorrect Thai Personal ID. length is not equal 13';
@@ -38,11 +34,10 @@ class ThaiIdValidator {
     for (var index = 0; index < 12; index++) {
       digitList[index] = digitList[index] * position;
       --position;
-
     }
 
     // 3rd step
-    var sum = digitList.fold(0, (first, second) => first + second);
+    var sum = digitList.fold(0, (dynamic first, second) => first + second);
 
     // 4th step
     var mod = sum % 11;
